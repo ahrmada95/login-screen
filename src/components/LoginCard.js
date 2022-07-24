@@ -3,18 +3,34 @@ import './login.css';
 import LoginForm from './LoginForm';
 import {Users, User} from '../data/data' //Import constructor
 
-const LoginCard = () => {
+const LoginCard = (showStatus, handleLoginStatus) => {
     const [user, setUser] = useState(new User('test', 'test'));
-    const [showStatus, setShowStatus] = useState('login-msg-hidden')
-    const [loginStatus, setLoginStatus] = useState(0);
+    
+    //this is really jank, needs to be improved
+    const Eval = () => {
+        return (
+            Users.find((element) => {
+                return element.userName === user.userName && element.userPassword === user.userPassword
+            }) ? true : false
+        )
+    }
 
     const onLoginSubmit = (inputUser, inputPass) => {
         setUser(new User(inputUser,inputPass));
-        console.log(Users);
-        setShowStatus('login-msg-show')
+        const truth = Eval();
+
+        if (truth) {
+            handleLoginStatus(1);
+        } else if (!truth) {
+            handleLoginStatus(-1)
+        } else {
+            handleLoginStatus(0)
+        }
     }   
 
-    const sampleUser = new User('newTest', 'newPassword');
+    const sampleUser = new User('ahrmada95', 'Taipei101VIP123=');
+
+    
 
     return (
         <div className='login-card'>

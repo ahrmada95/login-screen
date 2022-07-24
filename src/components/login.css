@@ -97,6 +97,19 @@ body {
     animation: fadeIn 0.5s, shake 0.5s;
 }
 
+.login-card > #login-msg-show-good {
+    flex: 1;
+    display: flex;
+    margin: 25px;
+    color: rgb(27, 102, 27);
+    visibility: hidden;
+    border-style: none;
+    background-color: rgba(66, 2, 2, 0.75);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    animation: fadeIn 0.5s, shake 0.5s;
+}
 
 #header > h1 {
     font-size: 50px;
