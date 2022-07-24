@@ -69,7 +69,7 @@ body {
     }
   }
 
-.login-card > #login-msg-hidden {
+.login-card > .login-msg-hidden {
     flex: 1;
     display: flex;
     margin: 25px;
@@ -83,7 +83,7 @@ body {
     animation: fadeIn 0.5s, shake 0.5s;
 }
 
-.login-card > #login-msg-show {
+.login-card > .login-msg-show {
     flex: 1;
     display: flex;
     margin: 25px;
@@ -97,14 +97,13 @@ body {
     animation: fadeIn 0.5s, shake 0.5s;
 }
 
-.login-card > #login-msg-show-good {
+.login-card > .login-msg-show-good {
     flex: 1;
     display: flex;
     margin: 25px;
-    color: rgb(27, 102, 27);
-    visibility: hidden;
+    color: white;
     border-style: none;
-    background-color: rgba(66, 2, 2, 0.75);
+    background-color: rgb(10, 53, 10);
     justify-content: center;
     align-items: center;
     border-radius: 10px;

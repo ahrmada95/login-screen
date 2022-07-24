@@ -3,10 +3,11 @@ import './login.css';
 import LoginForm from './LoginForm';
 import {Users, User} from '../data/data' //Import constructor
 
-const LoginCard = (showStatus, handleLoginStatus) => {
+const LoginCard = () => {
+
     const [user, setUser] = useState(new User('test', 'test'));
-    
-    //this is really jank, needs to be improved
+    const [loginStatus, setLoginStatus] = useState('login-msg-hidden')
+
     const Eval = () => {
         return (
             Users.find((element) => {
@@ -19,18 +20,16 @@ const LoginCard = (showStatus, handleLoginStatus) => {
         setUser(new User(inputUser,inputPass));
         const truth = Eval();
 
-        if (truth) {
-            handleLoginStatus(1);
-        } else if (!truth) {
-            handleLoginStatus(-1)
+        if (truth==true) {
+            setLoginStatus('login-msg-show-good')
+        } else if (truth==false) {
+            setLoginStatus('login-msg-show')
         } else {
-            handleLoginStatus(0)
+            setLoginStatus('login-msg-hidden')
         }
     }   
 
     const sampleUser = new User('ahrmada95', 'Taipei101VIP123=');
-
-    
 
     return (
         <div className='login-card'>
@@ -38,7 +37,7 @@ const LoginCard = (showStatus, handleLoginStatus) => {
                 <h1>Login</h1>
             </div>
             <LoginForm onLoginSubmit={onLoginSubmit}/> {/*get login data*/}
-            <div id={showStatus}>
+            <div className={loginStatus}> 
                 Invalid Username or Password!
             </div>
         </div>
