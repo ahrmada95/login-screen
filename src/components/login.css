@@ -2,6 +2,12 @@
     font-family: title;
     src: url("../assets/Yu-Gi-Oh_Matrix_Regular_Small_Caps_1.ttf");
 }
+
+@font-face {
+    font-family: typing;
+    src: url("../assets/Yu-Gi-Oh_Matrix_Book.ttf")
+}
+
 body {
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../assets/bg.png);
     background-position: center;
@@ -30,16 +36,121 @@ body {
 }
 
 .login-card > #header {
-    flex-grow: 1;
-    width: 100%;
+    flex: 1;
     font-family: title;
     text-align: center;
 }
 
+.login-card > #login-area {
+    flex: 4;
+    margin: 25px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+.login-card > #login-msg-hidden {
+    flex: 1;
+    display: flex;
+    margin: 25px;
+    color: red;
+    visibility: hidden;
+    border-style: none;
+    background-color: rgba(66, 2, 2, 0.75);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    animation: fadeIn 0.5s, shake 0.5s;
+}
+
+.login-card > #login-msg-show {
+    flex: 1;
+    display: flex;
+    margin: 25px;
+    color: red;
+    visibility: show;
+    border-style: none;
+    background-color: rgba(66, 2, 2, 0.75);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    animation: fadeIn 0.5s, shake 0.5s;
+}
+
+
 #header > h1 {
     font-size: 50px;
 }
-.login-card > #login-area {
-    flex-grow: 3;
+
+#login-area > .form {
+    height: 100%;
     width: 100%;
+}
+
+input[type=text], input[type=password] {   
+    width: 100%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid white;   
+    box-sizing: border-box;   
+    font-family: typing;
+    font-size: 15px;
+}  
+
+#login-button {   
+    background-color: rgba(0,0,60,1);   
+    width: 100%;  
+    color: white;   
+    padding: 15px;   
+    margin: 10px 0px;   
+    border: solid;   
+    cursor: pointer;
+    font-family: typing;
+    font-size: 15px;
+}  
+
+#login-button:hover {   
+    background-image: radial-gradient(circle, #00003c, #403a69, #7c7699, #bcb8cb, #ffffff);
+    background-color: rgba(0,0,0,0.256);   
+    color: white;   
+  
+}  
+
+#login-area > form > label:nth-child(1) {
+    font-family: title;
+    font-size: 30px;
+}
+
+#login-area > form > label:nth-child(4) {
+    font-family: title;
+    font-size: 30px;
+}
+
+#user-box {
+    margin-bottom: 30px;
+}
+
+#pass-box {
+    margin-bottom: 30px;
 }
