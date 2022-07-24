@@ -1,0 +1,45 @@
+@font-face {
+    font-family: title;
+    src: url("../assets/Yu-Gi-Oh_Matrix_Regular_Small_Caps_1.ttf");
+}
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../assets/bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+.login-screen {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    width: 400px;
+    height: 600px;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card > #header {
+    flex-grow: 1;
+    width: 100%;
+    font-family: title;
+    text-align: center;
+}
+
+#header > h1 {
+    font-size: 50px;
+}
+.login-card > #login-area {
+    flex-grow: 3;
+    width: 100%;
+}
